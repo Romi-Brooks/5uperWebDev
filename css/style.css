@@ -99,19 +99,31 @@ body{
 
 
 /* 为手机创建样式 */
-@media screen and (max-width: 440px) {
-    #LogoPage {
-        color: rebeccapurple;
+
+@media screen and (max-width: 540px) {
+    /* 这个样式是当设备width小于540px时去掉nav li反之替代Logo Text */
+    #topbar .logo {
+        top: 1px;
+        text-align: center;
     }
-    #LogoPage .BigTittle {
-        text-align: left;
-        position: relative;
-        font-size: 30px;;
-    }
-    #LogoPage .QouteText {
-        position: relative;
-        font-size: 14px;
-        margin-left: 70px;
-        font-weight: bold;
+    #topbar .nav {
+      display: none;
     }
 }
+
+@media screen and (max-width: 440px) {
+    /* 这个样式是当设备width小于440px时居中LogoPage文字，并且对齐 */
+    #LogoPage {
+        margin-left: 0px;
+    }
+    #LogoPage .BigTittle {
+        text-align: center;
+    }
+    #LogoPage .fix {
+       text-align: right;
+    }
+    #LogoPage .QouteText {
+        text-align: center;
+    }
+}
+
