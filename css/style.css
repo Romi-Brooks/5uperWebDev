@@ -1,0 +1,117 @@
+/* 字体设定 */
+body, input, textarea, select, button {
+    font-family: "Microsoft YaHei", "微软雅黑", "宋体", "Arial", "Helvetica", "sans-serif";
+    font-size: 12px;
+    color: #333;
+    line-height: 1.5;
+}
+body{
+    background-color: darkgray;
+}
+/* topbar */
+#topbar {
+    position: relative;
+    background-color: rgb(124, 122, 122);
+    border-bottom: 1px solid #635a5a;
+    position: relative;
+    z-index: 100;
+    /* 整体圆角处理 */
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    
+
+}
+#topbar .logo {
+    margin-left: 20px;
+    position: relative;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: large;
+    top: 5.5px;
+}
+#topbar .nav {
+    top: -13px;
+    position: relative;
+    text-align: right;
+}
+#topbar .nav li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 20px;
+}
+#topbar .nav li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bolder;
+    /* 调整间距 */
+    padding: 0 10px;
+}
+#topbar .nav li a:hover {
+    color: rgb(15, 14, 13);
+}
+#topbar .nav li a.active {
+    color: rgb(124, 115, 108);
+}
+#topbar .nav li a.active:hover {
+    color: rgb(0, 0, 0);
+}
+#topbar .nav li a.active:visited {
+    color: rgb(194, 188, 184);
+}
+#topbar .nav li a:visited {
+    color: #333;
+}
+
+#LogoPage {
+    color: #232629;
+    position: relative;
+    margin-left: 120px;
+}
+#LogoPage .BigTittle {
+    position: relative;
+    font-size: 30px;
+    text-align: left; 
+    /* 使元素位于屏幕中央 */
+    margin-top: calc(50vh - 100px);
+}
+#LogoPage .QouteText {
+    position: relative;
+    font-size: 14px;
+    margin-left: 70px;
+    font-weight: bold;
+}
+
+
+.Product_1 {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 为手机创建样式 */
+@media screen and (max-width: 440px) {
+    #LogoPage {
+        color: rebeccapurple;
+    }
+    #LogoPage .BigTittle {
+        text-align: left;
+        position: relative;
+        font-size: 30px;;
+    }
+    #LogoPage .QouteText {
+        position: relative;
+        font-size: 14px;
+        margin-left: 70px;
+        font-weight: bold;
+    }
+}
