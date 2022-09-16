@@ -6,12 +6,18 @@ body, input, textarea, select, button {
     line-height: 1.5;
 }
 body{
+    /* 背景图片为/img/Background.jpg ,不剪切 并且模糊处理*/
+    background: url(../img/Background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     background-color: darkgray;
 }
 /* topbar */
 #topbar {
     position: relative;
-    background-color: rgb(124, 122, 122);
+    background-color: #707683;
     border-bottom: 1px solid #635a5a;
     position: relative;
     z-index: 100;
@@ -26,7 +32,7 @@ body{
     margin-left: 20px;
     position: relative;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: black;
     font-weight: bolder;
     font-size: large;
     top: 5.5px;
@@ -64,12 +70,15 @@ body{
     color: #333;
 }
 
+
+
 #LogoPage {
-    color: #232629;
+    color: bisque;
     position: relative;
     margin-left: 120px;
 }
 #LogoPage .BigTittle {
+    /* 平滑渐入动画 */
     position: relative;
     font-size: 30px;
     text-align: left; 
@@ -77,10 +86,113 @@ body{
     margin-top: calc(50vh - 100px);
 }
 #LogoPage .QouteText {
+    display: inline-block;
     position: relative;
     font-size: 14px;
     margin-left: 70px;
     font-weight: bold;
+}
+#LogoPage {
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+}   
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+#LogoPage .QouteText {
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+}   
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 当鼠标滑过时，抖动 */
+#LogoPage .QouteText:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes shake {
+    0% {
+        transform: translate(0.5px, 0.5px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-0.5px, 0.5px) rotate(-0.1deg);
+    }
+    20% {
+        transform: translate(0.5px, 0px) rotate(0.1deg);
+    }
+    30% {
+        transform: translate(0.5px, 0.5px) rotate(0deg);
+    }
+    40% {
+        transform: translate(0.5px, -0.5px) rotate(0.1deg);
+    }
+    50% {
+        transform: translate(-0.5px, 0.5px) rotate(-0.1deg);
+    }
+    60% {
+        transform: translate(0.5px, 0.5px) rotate(0deg);
+    }
+    70% {
+        transform: translate(0.5px, 0.5px) rotate(-0.1deg);
+    }
+    80% {
+        transform: translate(-0.5px, -0.5px) rotate(0.1deg);
+    }
+    90% {
+        transform: translate(0.5px, 0.5px) rotate(0deg);
+    }
+    100% {
+        transform: translate(0.5px, 0.5px) rotate(-0.1deg);
+    }
+}
+
+.SineAnime {
+    display: inline;
+    margin-left: 1150px;
+
+}
+
+#PhotoQoute {
+    /* 自适应贴底 */
+    position: absolute;
+    bottom: 0;
+    margin-left: calc(50vw - 100px);
+    margin-right: calc(50vw - 100px);
+    text-align: center;
+    font-size: 10px;
+    color:#333
+}
+#PhotoQoute  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bolder;
+}
+#PhotoQoute  a:hover {
+    color: rgb(15, 14, 13);
+}
+#PhotoQoute  a.active {
+    color: rgb(124, 115, 108);
+}
+#PhotoQoute  a.active:hover {
+    color: rgb(0, 0, 0);
+}
+#PhotoQoute  a.active:visited {
+    color: rgb(194, 188, 184);
+}
+#PhotoQoute  a:visited {
+    color: #333;
 }
 
 
@@ -96,13 +208,12 @@ body{
 
 
 
-
-
 /* 为手机创建样式 */
 
 @media screen and (max-width: 540px) {
     /* 这个样式是当设备width小于540px时去掉nav li反之替代Logo Text */
     #topbar .logo {
+        margin-left: 0px;
         top: 1px;
         text-align: center;
     }
